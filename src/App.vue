@@ -1,44 +1,34 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
+    <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
+        <v-img alt="Vuetify Logo" class="shrink mr-2" contain src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png" transition="scale-transition" width="40" />
+        Ryong
       </div>
 
       <v-spacer></v-spacer>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
+          <router-link class="routes" to="/">Home</router-link>
+          <router-link class="routes" to="/dialog">Dialog</router-link>
+          <router-link class="routes" to="/calendar">Calendar</router-link>
+          <router-link class="routes" to="/progress">Progress</router-link>
+          <router-link class="routes" to="/steppers">Steppers</router-link>
+          <router-link class="routes" to="/dataiterators">DataIterators</router-link>
+          <router-link class="routes" to="/table">Table</router-link>
+          <router-link class="routes" to="/virtual">VirtualScroller</router-link>
+
+      <v-spacer></v-spacer>
+
+      <v-btn href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank" text>
         <span class="mr-2">Latest Release</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
 
+    <v-spacer></v-spacer>
+
     <v-main>
-      <MainView />
+      <router-view></router-view>
     </v-main>
 
     <v-btn color="success">Success</v-btn>
@@ -49,17 +39,22 @@
 </template>
 
 <script>
-import MainView from './components/MainView.vue';
 
 export default {
   name: 'App',
-
   components: {
-    MainView,
   },
-
   data: () => ({
-    //
+ 
   }),
 };
 </script>
+
+<style scoped>
+.routes {
+  color: white;
+  padding: 9px;
+  text-decoration: none;
+  margin: 5px;
+}
+</style>
